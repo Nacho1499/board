@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+input {
+  width: 300px;
+  margin: 8px;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+.login-btn{
+  width: 310px;
+}
+.navbar{
+  opacity: 0.9;
+}
