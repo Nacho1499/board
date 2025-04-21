@@ -5,7 +5,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Navbar from "../Component/Navbar.jsx";
 import Spinner from "react-bootstrap/Spinner";
-import { data } from "react-router-dom";
+
 
 const Dashboard = () => {
   return (
