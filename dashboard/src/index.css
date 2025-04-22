@@ -22,3 +22,6 @@ input {
 .navbar{
   opacity: 0.9;
 }
+.user{
+  height: 200px;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -9,7 +10,14 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigate("/login"); // 👈 redirect after logout
+      toast.info('👋 Logged out successfully!', {
+        position: 'top-center',
+      });
+       // Redirect after a short delay
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
+    
     } catch (err) {
       alert("Error signing out: " + err.message);
     }

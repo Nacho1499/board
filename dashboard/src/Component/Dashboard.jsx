@@ -1,6 +1,6 @@
 import React from "react";
 import { Chart as chartJS } from "chart.js/auto";
-import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { Bar, Doughnut, Line, } from "react-chartjs-2";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Navbar from "../Component/Navbar.jsx";
@@ -16,7 +16,7 @@ const Dashboard = () => {
       <Container className="mt-5 p-3">
         <Row className="g-3">
           <Col md={6}>
-            <Card className="shadow p-3">
+            <Card className="user shadow p-3">
               <Card.Body>
                 <Card.Title>Congratulations John! 🎉</Card.Title>
                 <Card.Text>
@@ -30,7 +30,7 @@ const Dashboard = () => {
             </Card>
           </Col>
           <Col xs={6} md={3}>
-            <Card className="shadow p-3">
+            <Card className=" user shadow p-3">
               <Card.Body>
                 <i className="fa-solid fa-cart-plus fa-2x text-danger"></i>
                 <Card.Title>Orders</Card.Title>
@@ -39,7 +39,7 @@ const Dashboard = () => {
             </Card>
           </Col>
           <Col xs={6} md={3}>
-            <Card className="shadow p-3">
+            <Card className="user shadow p-3">
               <Card.Body>
                 <Spinner animation="border" variant="danger" />
                 <Card.Title>Total sales</Card.Title>
@@ -79,7 +79,7 @@ const Dashboard = () => {
           <Col xs={6} md={3}>
             <Card className="shadow p-3">
               <Card.Body>
-                <Card.Title>Orders</Card.Title>
+                <Card.Title>Average sales</Card.Title>
                 <Card.Text>
                   <Doughnut
                     data={{
@@ -103,7 +103,7 @@ const Dashboard = () => {
           <Col xs={6} md={3}>
             <Card className="shadow p-3">
               <Card.Body>
-                <Card.Title>Total sales</Card.Title>
+                <Card.Title>Performanace</Card.Title>
                 <Card.Text>
                   <Line
                     data={{

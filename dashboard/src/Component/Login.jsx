@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,9 +14,18 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard");
+        toast.success('✅ Signed up successfully!', {
+              position: "top-center",
+            });
+             // Redirect after a short delay
+            setTimeout(() => {
+              navigate('/dashboard');
+            }, 2000);
+      
     } catch (err) {
-      alert(err.message);
+      toast.error('❌ Sign up failed. Please try again.', {
+              position: "top-center",
+            });
     }
   };
 
@@ -23,7 +33,7 @@ const Login = () => {
   const handlePasswordChange = (event) => setPassword(event.target.value);
   return (
     <div className="login container p-5">
-      <form className="shadow p-4  rounded-4" action="">
+      <form className="shadow p-4  rounded-4 mx-auto" action="">
         <h4>Welcome to back</h4>
         <p>Please sign-in to your account</p>
         <input className="mt-5"
