@@ -2,22 +2,21 @@ import React from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Navbar = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   // logout logic
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      toast.info('👋 Logged out successfully!', {
-        position: 'top-center',
+      toast.info("👋 Logged out successfully!", {
+        position: "top-center",
       });
-       // Redirect after a short delay
+      // Redirect after a short delay
       setTimeout(() => {
-        navigate('/');
+        navigate("/");
       }, 2000);
-    
     } catch (err) {
       alert("Error signing out: " + err.message);
     }
@@ -26,7 +25,7 @@ const Navbar = () => {
     <nav className="navbar bg-dark fixed-top">
       <div className="container">
         <a className="navbar-brand text-light " href="#">
-        <i className="fa-solid fa-house text-danger"></i> Dashbaord
+          <i className="fa-solid fa-house text-danger"></i> Dashbaord
         </a>
         <button
           className="navbar-toggler bg-light"
@@ -45,8 +44,11 @@ const Navbar = () => {
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title text-light" id="offcanvasNavbarLabel">
-            <i className="fa-solid fa-house text-danger"></i> Dashboard
+            <h5
+              className="offcanvas-title text-light"
+              id="offcanvasNavbarLabel"
+            >
+              <i className="fa-solid fa-house text-danger"></i> Dashboard
             </h5>
             <button
               type="button"
@@ -58,20 +60,25 @@ const Navbar = () => {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <a className="nav-link active text-light" aria-current="page" href="#">
-                <i className="fa-solid fa-user text-danger"></i> profile
+                <a
+                  className="nav-link active text-light"
+                  aria-current="page"
+                  href="#"
+                >
+                  <i className="fa-solid fa-user text-danger"></i> profile
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#" onClick={handleLogout}>
-                <i className="fa-solid fa-right-from-bracket text-danger" ></i> Logout
+                <a
+                  className="nav-link text-light"
+                  href="#"
+                  onClick={handleLogout}
+                >
+                  <i className="fa-solid fa-right-from-bracket text-danger"></i>{" "}
+                  Logout
                 </a>
               </li>
-             
-                </ul>
-              
-            
-           
+            </ul>
           </div>
         </div>
       </div>
