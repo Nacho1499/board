@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-        toast.success('✅ Signed up successfully!', {
+        toast.success('✅ Login successfully!', {
               position: "top-center",
             });
              // Redirect after a short delay
@@ -23,7 +23,7 @@ const Login = () => {
             }, 2000);
       
     } catch (err) {
-      toast.error('❌ Sign up failed. Please try again.', {
+      toast.error('❌ Login failed. Please try again.', {
               position: "top-center",
             });
     }
