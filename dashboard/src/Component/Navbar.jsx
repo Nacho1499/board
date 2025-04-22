@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const navigate = useNavigate();
-
+  // logout logic
   const handleLogout = async () => {
     try {
       await signOut(auth);
