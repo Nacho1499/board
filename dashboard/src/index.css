@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+
 }
 input {
   width: 300px;
@@ -16,12 +18,57 @@ input {
   border-radius: 6px;
   border: 1px solid;
 }
-.login-btn{
+.login-btn {
   width: 310px;
 }
-.navbar{
+.navbar {
   opacity: 0.9;
 }
-.user{
+.user {
   height: 200px;
+}
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  min-height: 100vh;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  z-index: 1040;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    left: -250px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+  }
+
+  .main-content.collapsed {
+    margin-left: 80px;
+  }
 }

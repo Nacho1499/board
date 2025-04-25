@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { toast } from "react-toastify";
 
 const Register = () => {
+  const navigate=useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,7 +32,7 @@ const Register = () => {
   const handlePasswordChange = (event) => setPassword(event.target.value);
 
   return (
-    <div className="login container mx-auto p-5">
+    <div className="login container p-5">
       <form className="shadow p-4 mx-auto rounded-4">
         <h4>Adventure starts here 🚀</h4>
         <p>Create an account</p>
@@ -53,7 +55,7 @@ const Register = () => {
         <p className="mt-3">
           Already have an account?{" "}
           <Link to="/" href="" className="text-danger">
-            SignIn
+            Login
           </Link>
         </p>
 

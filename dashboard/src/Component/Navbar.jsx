@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -60,23 +61,23 @@ const Navbar = () => {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active text-light"
                   aria-current="page"
-                  href="#"
+                 
                 >
                   <i className="fa-solid fa-user text-danger"></i> profile
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link text-light"
-                  href="#"
+                 
                   onClick={handleLogout}
                 >
                   <i className="fa-solid fa-right-from-bracket text-danger"></i>{" "}
                   Logout
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

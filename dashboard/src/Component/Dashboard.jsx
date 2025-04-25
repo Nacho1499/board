@@ -1,132 +1,73 @@
-import React from "react";
-import { Chart as chartJS } from "chart.js/auto";
-import { Bar, Doughnut, Line, } from "react-chartjs-2";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Navbar from "../Component/Navbar.jsx";
-import Spinner from "react-bootstrap/Spinner";
-
+import React, { useState } from "react";
+import Nav from "./Nav.jsx";
+import Sidebar from "./Sidebar.jsx";
+import Chartjs from "../Charts/Chartjs.jsx";
 
 const Dashboard = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  const toggleMobileSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleCollapseSidebar = () => setSidebarCollapsed(!sidebarCollapsed);
+
   return (
-    <>
-      <Navbar />
-      <br />
+    <div className="App d-flex">
+      <Sidebar
+        isOpen={sidebarOpen}
+        isCollapsed={sidebarCollapsed}
+        toggleCollapseSidebar={toggleCollapseSidebar}
+      />
+      <div
+        className={`main-content flex-grow-1 ${
+          sidebarCollapsed ? "collapsed" : ""
+        }`}
+      >
+        <Nav toggleSidebar={toggleMobileSidebar} />
 
-      <Container className="mt-5 p-3">
-        <Row className="g-3">
-          <Col md={6}>
-            <Card className="user shadow p-3">
-              <Card.Body>
-                <Card.Title>Congratulations John! 🎉</Card.Title>
-                <Card.Text>
-                  You have done 68% 😎 more sales today. Check your new badge in
-                  your profile.
-                </Card.Text>
-                <Button variant="danger" className="shadow">
-                  View profile
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col xs={6} md={3}>
-            <Card className=" user shadow p-3">
-              <Card.Body>
-                <i className="fa-solid fa-cart-plus fa-2x text-danger"></i>
-                <Card.Title>Orders</Card.Title>
-                <Card.Text>1,200</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col xs={6} md={3}>
-            <Card className="user shadow p-3">
-              <Card.Body>
-                <Spinner animation="border" variant="danger" />
-                <Card.Title>Total sales</Card.Title>
-                <Card.Text>$38.5k</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+        <div className="container p-4 mt-3">
+          <div className="row g-3">
+            <div className="col-12 col-lg-6">
+              <div className=" card  shadow rounded p-3">
+                <div className="card-body">
+                  <h5 className="mb-3">
+                    Congratulations John! 🎉
+                  </h5>
 
-      <Container className="mt-3 p-3 mb-">
-        <Row className="g-3">
-          <Col md={6}>
-            <Card className="shadow p-3">
-              <Card.Body>
-                <Card.Title>Revenue</Card.Title>
-                <Card.Text>
-                  <Bar
-                    data={{
-                      labels: ["A", "B", "C"],
-                      datasets: [
-                        {
-                          label: "Revenue",
-                          data: [200, 300, 400],
-                        },
-                        {
-                          label: "loss",
-                          data: [90, 80, 70],
-                        },
-                      ],
-                    }}
-                  />
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col xs={6} md={3}>
-            <Card className="shadow p-3">
-              <Card.Body>
-                <Card.Title>Average sales</Card.Title>
-                <Card.Text>
-                  <Doughnut
-                    data={{
-                      labels: ["A", "B", "C"],
-                      datasets: [
-                        {
-                          label: "Revenue",
-                          data: [200, 300, 400],
-                        },
-                        {
-                          label: "loss",
-                          data: [90, 80, 70],
-                        },
-                      ],
-                    }}
-                  />
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col xs={6} md={3}>
-            <Card className="shadow p-3">
-              <Card.Body>
-                <Card.Title>Performanace</Card.Title>
-                <Card.Text>
-                  <Line
-                    data={{
-                      labels: ["A", "B", "C"],
-                      datasets: [
-                        {
-                          label: "Revenue",
-                          data: [200, 300, 400],
-                        },
-                        {
-                          label: "loss",
-                          data: [90, 80, 70],
-                        },
-                      ],
-                    }}
-                  />
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-    </>
+                  <p>
+                    You have done 68% 😎 more sales today. Check your new badge
+                    in your profile.
+                  </p>
+                  <button className="btn bg-danger text-light shadow">
+                    View profile
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-6 col-lg-3">
+              <div className="h-100 card  shadow rounded">
+                <div className="card-body">
+                  <h5>Total sales</h5>
+                  <i className="fa-solid fa-cart-plus text-danger"></i>
+                  <hr />
+                  <h5>$150,000</h5>
+                </div>
+              </div>
+            </div>
+            <div className="col-6 col-lg-3">
+              <div className="h-100 card shadow rounded">
+                <div className="card-body">
+                  <h5>Orders</h5>
+                  <i class="fa-solid fa-users text-danger"></i>
+                  <hr />
+                  <h5>25,690</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Chartjs />
+      </div>
+    </div>
   );
 };
 
