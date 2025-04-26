@@ -38,12 +38,12 @@ const Nav = ({ toggleSidebar }) => {
         <i className="fa-solid fa-user"></i>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item href="#">Profile</Dropdown.Item>
+          <Dropdown.Item href="#"><i class="fa-solid fa-user text-danger"></i>  Profile</Dropdown.Item>
 
           <Dropdown.Divider />
           <Dropdown.Item onClick={handleLogout}>
             {" "}
-            <i className="fa-solid fa-right-from-bracket text-danger"></i>Logout
+            <i className="fa-solid fa-right-from-bracket text-danger"></i>  Logout
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>

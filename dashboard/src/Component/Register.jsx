@@ -32,27 +32,36 @@ const Register = () => {
   const handlePasswordChange = (event) => setPassword(event.target.value);
 
   return (
-    <div className="login container p-5">
-      <form className="shadow p-4 mx-auto rounded-4">
-        <h4>Adventure starts here 🚀</h4>
-        <p>Create an account</p>
+    <div className="login container-fluid p-5">
+      <form className="shadow p-4 mx-auto rounded-4 border">
+        <div className="shadow rounded p-3 border ">
+        <h4 className="text-center">Adventure starts here 🚀</h4>
+        <p className="text-center text-danger">Create an account</p>
+        </div>
         <input
-          className="mt-5"
+          className="mt-5 form-control"
           type="email"
           placeholder="Enter Email"
           onChange={handleEmailChange}
           autoComplete="email"
         />
-        <br />
+        
         <input
-          className="mt-3"
+          className="mt-3 form-control"
           type="password"
           placeholder="Enter Password"
           onChange={handlePasswordChange}
           autoComplete="password"
         />
-        <br />
-        <p className="mt-3">
+       
+        <input
+          className="mt-3 form-control"
+          type="password"
+          placeholder="Confirm password"
+          onChange={handlePasswordChange}
+          autoComplete="password"
+        />
+        <p className="mt-4">
           Already have an account?{" "}
           <Link to="/" href="" className="text-danger">
             Login

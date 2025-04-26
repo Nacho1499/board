@@ -31,19 +31,21 @@ const Login = () => {
   const handleEmailChange = (event) => setEmail(event.target.value);
   const handlePasswordChange = (event) => setPassword(event.target.value);
   return (
-    <div className="login container p-5">
-      <form className="shadow p-4  rounded-4 mx-auto" action="">
-        <h4>Welcome back</h4>
-        <p>Please sign-in to your account</p>
+    <div className="login container-fluid p-5">
+      <form className="shadow p-4  rounded-4 mx-auto border" action="">
+        <div className="shadow p-3 rounded border">
+        <h4 className="text-center">Welcome back</h4>
+        <p className="text-center text-danger">Please sign-in to your account</p>
+        </div>
         <input
-          className="mt-5"
+          className="mt-5 form-control"
           type="email"
           placeholder="Enter Email"
           onChange={handleEmailChange}
         />
-        <br />
+        
         <input
-          className="mt-3"
+          className="mt-3 form-control"
           type="text"
           placeholder="Enter Password"
           onChange={handlePasswordChange}

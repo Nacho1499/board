@@ -20,22 +20,22 @@ const Sidebar = ({ isOpen, isCollapsed, toggleCollapseSidebar }) => {
       <ul className="nav flex-column px-2 mt-3">
         <li className="nav-item">
           <a className="nav-link text-white" href="#">
-            {isCollapsed ? <i className="fa-solid fa-house"></i> : "Home"}
+            {isCollapsed ? <i className="fa-solid fa-house text-danger"></i> : "Home"}
           </a>
         </li>
         <li className="nav-item">
           <a className="nav-link text-white" href="#">
-            {isCollapsed ? <i className="fa-solid fa-users"></i> : "Users"}
+            {isCollapsed ? <i className="fa-solid fa-users text-danger"></i> : "Users"}
           </a>
         </li>
         <li className="nav-item">
           <a className="nav-link text-white" href="#">
-            {isCollapsed ? <i className="fa-solid fa-chart-simple"></i>: "Analytics"}
+            {isCollapsed ? <i className="fa-solid fa-chart-simple text-danger"></i>: "Analytics"}
           </a>
         </li>
         <li className="nav-item">
           <a className="nav-link text-white" href="#">
-            {isCollapsed ? <i className="fa-solid fa-gear"></i> : "Settings"}
+            {isCollapsed ? <i className="fa-solid fa-gear text-danger"></i> : "Settings"}
           </a>
         </li>
       </ul>

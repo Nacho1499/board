@@ -9,11 +9,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.75),rgba(134, 128, 128, 0.75)),url(assets/bar1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
 }
 input {
   width: 300px;
-  margin: 8px;
   padding: 7px;
   border-radius: 6px;
   border: 1px solid;
